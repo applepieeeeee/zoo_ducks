@@ -2,19 +2,19 @@
     {
         "title": "Predators",
         "description": "Ducks have many predators. Ducklings are particularly vulnerable, since their inability to fly makes them easy prey not only for predatory birds but also for large fish like pike, crocodilians, predatory testudines such as the alligator snapping turtle, and other aquatic hunters, including fish-eating birds such as herons.",
-        "image_url": "/images/predators.png",
+        "image_url": "/predators.png",
         "id": 1 
     },
     {
         "title": "Diet",
         "description": "Ducks eat food sources such as grasses, aquatic plants, fish, insects, small amphibians, worms, and small molluscs.",
-        "image_url": "/images/diet.png",
+        "image_url": "/diet.png",
         "id": 2
     },
     {
         "title": "Taxonomy",
         "description": "All ducks belong to the biological order Anseriformes, a group that contains the ducks, geese and swans, as well as the screamers, and the magpie goose.",
-        "image_url": "/images/taxonomy.png",
+        "image_url": "/taxonomy.png",
         "id": 3
     }
 ]

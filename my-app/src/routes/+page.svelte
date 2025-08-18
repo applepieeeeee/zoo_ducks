@@ -8,7 +8,7 @@
         {
             "title": "Loading...",
             "description": "",
-            "icon": "",
+            "image_url": "",
             "id": 0 
         }
     ]);
@@ -20,7 +20,6 @@
 
     let fact_desc = $derived(facts[currentFact - 1]?.description || "");
     let fact_title = $derived(facts[currentFact - 1]?.title || "");
-
     let fact_image = $derived(facts[currentFact - 1]?.image_url || "");
 
     onMount(async () => {
@@ -30,7 +29,6 @@
         facts = data;
         loaded = true;
         totalFacts = facts.length;
-        
     });
 
     function nextFact() {
@@ -56,12 +54,14 @@
 <main class="container">
     <div class="fact-card">
         <div class="fact-content">
-            <div class="fact-icon">
-                <img src="{base}/images/{fact_icon}" alt="{fact_title} image" />
+            <div class="fact-image">
+                <img src={fact_image} alt="Image related to {fact_title}" />
             </div>
+
             <h2 class="fact-title">{fact_title}</h2>
             <p class="fact-description">{fact_desc}</p>
         </div>
+
         <div class="navigation-controls">
             <button on:click={prevFact} class="nav-button" aria-label="Previous fact">
                 ◀
@@ -71,6 +71,7 @@
                 ▶
             </button>
         </div>
+        
     </div>
 </main>
 
@@ -112,9 +113,11 @@
         align-items: center;
     }
 
-    .fact-icon img {
-        width: 96px;
-        height: 96px;
+    .fact-image img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        border-radius: 8px;
         margin-bottom: 1rem;
     }
 
