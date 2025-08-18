@@ -71,10 +71,13 @@
             <button on:click={prevFact} class="nav-button" aria-label="Previous fact">
                 ◀
             </button>
+
             <span class="fact-counter">{currentFact} / {totalFacts}</span>
+
             <button on:click={nextFact} class="nav-button" aria-label="Next fact">
                 ▶
             </button>
+            
         </div>
 
         {#if allViewed}
