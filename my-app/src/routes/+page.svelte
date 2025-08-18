@@ -1,6 +1,7 @@
 <script>
     import { base } from "$app/paths";
     import { onMount } from "svelte";
+    import Banner from "$lib/Banner.svelte"; 
     
     let loaded = $state(false); 
 
@@ -48,6 +49,9 @@
         }
     }
 </script>
+
+<Banner />
+
 
 <svelte:head>
 </svelte:head>
