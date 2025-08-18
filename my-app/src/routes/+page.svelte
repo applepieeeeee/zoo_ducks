@@ -74,9 +74,9 @@
         </div>
 
         {#if allViewed}
-            <div class="sercret-page-unlock">
+            <div class="secret-page-unlock">
                 <p>You've viewed all the facts!</p>
-                <button onclick = "window.location.href = '/serect-page'">Open secret page</button>
+                <button on:click={() => window.location.href = '/secret-page'}>Open secret page</button>
             </div>
         {/if}
 
@@ -84,6 +84,8 @@
 </main>
 
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Ballet&display=swap');
+
     :root {
         --bg-color: #f0f4f8;
         --card-bg: #fffefd;
@@ -97,7 +99,7 @@
         justify-content: center;
         align-items: center;
         background-color: var(--bg-color);
-        font-family: Arial, sans-serif;
+        font-family: 'Google Sans Code', monospace;
         padding: 1rem;
     }
 
@@ -130,9 +132,14 @@
     }
 
     .fact-title {
-        font-size: 1.8rem;
+        font-family: 'Ballet', cursive;
+
+        font-size: 4rem;
         font-weight: 700;
-        margin-bottom: 0.5rem;
+        letter-spacing: 0.06em;
+
+        margin-bottom: -1rem;
+        margin-top: 0rem;
         color: var(--accent-color);
     }
 
@@ -141,6 +148,8 @@
         line-height: 1.6;
         color: var(--text-color);
         margin-bottom: 2rem;
+
+        font-family: 'Google Sans Code', monospace;
     }
 
     .navigation-controls {
@@ -171,16 +180,16 @@
     }
 
     .fact-counter {
-        font-size: 1rem;
+        font-size: 1.6rem;
         font-weight: 600;
         color: #be6326;
     }
 
     .secret-page-unlock {
-        margin-top: 2rem;
+        margin-top: 0rem;
+        margin-bottom: -1rem;
         text-align: center;
         padding: 2rem;
-        background-color: #e6f7ff;
         border-radius: 8px;
     }
 
@@ -188,19 +197,22 @@
         color: #be7e08;
     }
 
-    .secret-page-unlock button{
-        background-color: #007bff;
+    .secret-page-unlock button {
+        background-color: #f58a5e;
         color: white;
-        
-        padding: 10px 20px;
-        border-radius: 4px;
+        border: 1px solid #f58a5e; 
+        padding: 12px 24px; 
+        border-radius: 10px; 
 
-        font-size: 1rem;
-        transition: background-color 0.3s ease;
-    }
+        font-size: 1.1rem;
+        font-family: 'Google Sans Code', monospace;
+
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }   
 
     .secret-page-unlock button:hover{
-        background-color: #b35700;
+        background-color: #af4210;
     }
 
 </style>
