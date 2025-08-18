@@ -87,7 +87,7 @@
     @import url('https://fonts.googleapis.com/css2?family=Ballet&display=swap');
 
     :root {
-        --bg-color: #f0f4f8;
+        --bg-color: #e7f0f8;
         --card-bg: #fffefd;
         --text-color: #301b03;
         --accent-color: #f5c875;
@@ -198,9 +198,9 @@
     }
 
     .secret-page-unlock button {
-        background-color: #f58a5e;
+        background-color: #eeb199;
         color: white;
-        border: 1px solid #f58a5e; 
+        border: 1px solid #e6a991; 
         padding: 12px 24px; 
         border-radius: 10px; 
 
@@ -209,10 +209,9 @@
 
         cursor: pointer;
         transition: background-color 0.3s ease, transform 0.2s ease;
-    }   
+    }  
 
     .secret-page-unlock button:hover{
         background-color: #af4210;
     }
-
 </style>
