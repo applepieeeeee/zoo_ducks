@@ -16,6 +16,7 @@
     let currentFact = $state(1);
     let totalFacts = $state(0);
     let viewedFacts = $state([]);
+
     let allViewed = $derived(viewedFacts.length === totalFacts && totalFacts > 0);
 
     let fact_desc = $derived(facts[currentFact - 1]?.description || "");
@@ -71,7 +72,14 @@
                 ▶
             </button>
         </div>
-        
+
+        {#if allViewed}
+            <div class="sercret-page-unlock">
+                <p>You've viewed all the facts!</p>
+                <button onclick = "window.location.href = '/serect-page'">Open secret page</button>
+            </div>
+        {/if}
+
     </div>
 </main>
 
@@ -167,4 +175,32 @@
         font-weight: 600;
         color: #be6326;
     }
+
+    .secret-page-unlock {
+        margin-top: 2rem;
+        text-align: center;
+        padding: 2rem;
+        background-color: #e6f7ff;
+        border-radius: 8px;
+    }
+
+    .secret-page-unlock h2{
+        color: #be7e08;
+    }
+
+    .secret-page-unlock button{
+        background-color: #007bff;
+        color: white;
+        
+        padding: 10px 20px;
+        border-radius: 4px;
+
+        font-size: 1rem;
+        transition: background-color 0.3s ease;
+    }
+
+    .secret-page-unlock button:hover{
+        background-color: #b35700;
+    }
+
 </style>
