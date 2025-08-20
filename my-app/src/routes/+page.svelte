@@ -13,7 +13,7 @@
             "id": 0 
         }
     ]);
-    
+
     let currentFact = $state(1);
     let totalFacts = $state(0);
     let viewedFacts = $state([]);
@@ -48,10 +48,10 @@
             viewedFacts = [...viewedFacts, id];
         }
     }
+
 </script>
 
 <Banner />
-
 
 <svelte:head>
 </svelte:head>
@@ -68,13 +68,13 @@
         </div>
 
         <div class="navigation-controls">
-            <button on:click={prevFact} class="nav-button" aria-label="Previous fact">
+            <button onclick={prevFact} class="nav-button" aria-label="Previous fact">
                 ◀
             </button>
 
             <span class="fact-counter">{currentFact} / {totalFacts}</span>
 
-            <button on:click={nextFact} class="nav-button" aria-label="Next fact">
+            <button onclick={nextFact} class="nav-button" aria-label="Next fact">
                 ▶
             </button>
             
@@ -83,7 +83,7 @@
         {#if allViewed}
             <div class="secret-page-unlock">
                 <p>You've viewed all the facts!</p>
-                <button on:click={() => window.location.href = '/secret-page'}>Open secret page</button>
+                <button onclick={() => window.location.href = '/secret-page'}>Open secret page</button>
             </div>
         {/if}
 
@@ -203,7 +203,7 @@
     .secret-page-unlock h2{
         color: #be7e08;
     }
-
+    
     .secret-page-unlock button {
         background-color: #eeb199;
         color: white;
@@ -219,6 +219,7 @@
     }  
 
     .secret-page-unlock button:hover{
-        background-color: #af4210;
+        background-color: #b84915;
     }
+
 </style>

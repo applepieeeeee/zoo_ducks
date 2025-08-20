@@ -13,7 +13,7 @@
         font-style: normal;
         font-display: swap;
     }
-
+    
     #zoo_linkBanner {
         background-color: rgb(29, 65, 29);
         padding: 10px;
