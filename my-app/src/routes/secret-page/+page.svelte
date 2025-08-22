@@ -49,8 +49,7 @@
 
     onDestroy(() => {
         clearTimeout(timeout);
-    }
-
+    });
 
 </script>
 
