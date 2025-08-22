@@ -300,22 +300,53 @@
 
         padding: 1.5rem;
         max-width: 500px;
+        width: 100%;
+
+        text-align: center;
+        margin-top: 1.5rem;
+        position: relative;
+        min-height: 120px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
 
     .random-fact-widget .random-button{
         position: absolute;
+        top: 10px;
+        right: 10px;
+        margin: 0;
+        z-index: 5;
     }
 
     .random-fact-content{
         color: var(--text-color);
+        margin-top: 0.5rem;
+
+        animation: fadeIn 0.5s ease-out;
+        max-width: 80%;
     }
 
     .random-fact-content h3{
         font-family: 'Google Sans Code', monospace;
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: var(--accent-color);
+        margin-bottom: 0.5rem;
     }
 
     .random-fact-content p{
         font-size: 0.95rem;
+        line-height: 1.2;
+        margin-bottom: 0.5rem;
+    }
+
+    @keyframes fadeIn{
+        from{ opacity: 0; transform: translateY(10px); }
+        to{ opacity: 1; transform: translateY(0); }
     }
 
 </style>
