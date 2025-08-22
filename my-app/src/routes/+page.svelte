@@ -5,18 +5,18 @@
     
     let loaded = $state(false); 
 
-    let facts = $state([]);
+    let facts = $state([
+        {
+            "title": "Loading...",
+            "description": "",
+            "image_url": "",
+            "id": 0 
+        }
+    ]);
 
     let currentFact = $state(1);
     let totalFacts = $state(0);
     let viewedFacts = $state([]);
-
-    let randomFacts = $state([]);
-    let totalRandomFacts = $state(0);
-
-    let title = $state("");
-    let desc = $state("");
-    let isRandomFactVisible = $state(false);
 
     let allViewed = $derived(viewedFacts.length === totalFacts && totalFacts > 0);
 
@@ -25,26 +25,12 @@
     let fact_image = $derived(facts[currentFact - 1]?.image_url || "");
 
     onMount(async () => {
-        const mainResponse = await fetch('${base}/facts.json');
-        const mainData = await mainResponse.json();
-
-        facts = mainData;
-        totalFacts = facts.length;
-
-        const randomResponse = await fetch('${base}/randomfacts.json');
-        const randomData = await randomResponse.json();
-
-        randomFacts = randomData;
-        totalRandomFacts = randomFacts.length;
-
+        const response = await fetch(`${base}/facts.json`);
+        const data = await response.json();
+        
+        facts = data;
         loaded = true;
-
-        if (facts.length > 0) {
-            const initialId = facts[0].id;
-            if (initialId && !viewedFacts.includes(initialId)) {
-                viewedFacts = [...viewedFacts, initialId];
-            }
-        }
+        totalFacts = facts.length;
     });
 
     function nextFact() {
@@ -61,21 +47,6 @@
         if (id && !viewedFacts.includes(id)) {
             viewedFacts = [...viewedFacts, id];
         }
-    }
-    
-    function randomFact(){
-        if (totalRandomFacts === 0) return;
-
-        let randomIndex;
-        let newFactTitle;
-        do{
-            randomIndex = Math.floor(Math.random() * totalRandomFacts);
-            newFactTitle = randomFacts[randomIndex]?.title;
-        } while (newFactTitle === title && totalRandomFacts > 1);
-
-        title = randomFacts[randomIndex]?.title ||"";
-        desc = randomFacts[randomIndex]?.description ||"";
-        isRandomFactVisible = true;
     }
 
 </script>
@@ -114,6 +85,7 @@
             <button onclick={nextFact} class="nav-button" aria-label="Next fact">
                 ▶
             </button>
+            
         </div>
 
         {#if allViewed}
@@ -123,20 +95,6 @@
             </div>
         {/if}
 
-    </div>
-
-    <div class = "random-fact-widget">
-        <h3 class = "random-widget-title"> Ranodm Duck Facts </h3>
-        <button onclick = {randomFact} class = "nav-button random-button" area-label= "show random fact !">
-            🦆
-        </button>
-
-        {#if isRandomFactVisible}
-            <div class = "random-fact-content">
-                <h3> {title}</h3>
-                <p> {desc}</p>
-            </div>
-        {/if}
     </div>
 </main>
 
@@ -171,8 +129,6 @@
         width: 100%;
         text-align: center;
         transition: transform 0.3s ease;
-
-        margin-top: 2rem;
     }
 
     .fact-card:hover {
@@ -241,16 +197,6 @@
         transform: scale(1.1);
     }
 
-    .random-button{
-        background-color: #c6d9a7;
-        color: #4b5741;
-        font-size: 1.5rem;
-    }
-
-    .random-button:hover{
-        background-color: #a7ba89;
-    }
-
     .fact-counter {
         font-size: 1.6rem;
         font-weight: 600;
@@ -309,61 +255,6 @@
     .title-letter:hover{
         color: #be6326;
         transform: translateY(-2px);
-    }
-
-    .random-fact-widget{
-        background-color: #5a6653;
-        border-radius: 12px;
-
-        padding: 1.5rem;
-        max-width: 500px;
-        width: 100%;
-
-        text-align: center;
-        margin-top: 1.5rem;
-        position: relative;
-        min-height: 120px;
-
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    }
-
-    .random-fact-widget .random-button{
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        margin: 0;
-        z-index: 5;
-    }
-
-    .random-fact-content{
-        color: var(--text-color);
-        margin-top: 0.5rem;
-
-        animation: fadeIn 0.5s ease-out;
-        max-width: 80%;
-    }
-
-    .random-fact-content h3{
-        font-family: 'Google Sans Code', monospace;
-        font-size: 1.3rem;
-        font-weight: 600;
-        color: var(--accent-color);
-        margin-bottom: 0.5rem;
-    }
-
-    .random-fact-content p{
-        font-size: 0.95rem;
-        line-height: 1.2;
-        margin-bottom: 0.5rem;
-    }
-
-    @keyframes fadeIn{
-        from{ opacity: 0; transform: translateY(10px); }
-        to{ opacity: 1; transform: translateY(0); }
     }
 
 </style>
