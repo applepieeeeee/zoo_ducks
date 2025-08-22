@@ -48,7 +48,21 @@
             viewedFacts = [...viewedFacts, id];
         }
     }
+    
+    function randomFact(){
+        if (totalFacts === 0) return;
 
+        let randomIndex;
+        do{
+            randomIndex = Math.floor(Math.random() * totalFacts);
+        } while (randomIndex + 1 === currentFact && totalFacts>1);
+
+        current = randomIndex+1;
+        const id = facts[currentFact-1]?.id;
+        if (id && !viewedFacts.includes(id)){
+            viewedFacts = [...viewedFacts, id];
+        }
+    }
 
 </script>
 
@@ -80,11 +94,15 @@
             <button onclick={prevFact} class="nav-button" aria-label="Previous fact">
                 ◀
             </button>
-
+            
             <span class="fact-counter">{currentFact} / {totalFacts}</span>
 
             <button onclick={nextFact} class="nav-button" aria-label="Next fact">
                 ▶
+            </button>
+
+            <button onclick={randomFact} class= "nav-button random-button" aria-label = "Random Fact">
+                🦆
             </button>
             
         </div>
@@ -196,6 +214,16 @@
     .nav-button:hover {
         background-color: #f0b549;
         transform: scale(1.1);
+    }
+
+    .random-button{
+        background-color: #c6d9a7;
+        color: #4b5741;
+        font-size: 1.5rem;
+    }
+
+    .random-button:hover{
+        background-color: #a7ba89;
     }
 
     .fact-counter {
