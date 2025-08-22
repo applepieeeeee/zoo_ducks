@@ -134,11 +134,51 @@
         transform: translate(var(--duck-x, 0px), var(--duck-y, 0px));
     }
 
+    .duck-image{
+        position: absolute;
+    }
+
+    .duck-face{
+        top:0%;
+        left: 0%;
+        width: 100%;
+        height: 100%
+    }
+
+    .duck-message-bubble{
+        position: absolute;
+    }
+
 </style>
 
 <div class = "main-page-wrapper">
     <main>
         <h1> You found the secret page! </h1>
         <p> As your rewards, you get to play with <span class = "ducky-hightlight"> Ducky </span></p>
+
+        <button
+            id = "duck-interaction-area"
+            class = "duck-interaction-area"
+            on:click = {duckClick}
+            type = "button"
+            aria-label = "Play with Ducky"
+
+            <img
+                src = {DUCK_IMAGES.body}
+                alt = "ducky body"
+                class = "duck-image"
+            />
+
+            <img
+                src = {currentFaceSrc}
+                alt = "ducky face :D"
+                class = "duck-image duck-face"
+            />
+
+            <div class = "duck-message-bubble">
+                {duckMessage}
+            </div>
+        ></button>
+
     </main>
 </div>
