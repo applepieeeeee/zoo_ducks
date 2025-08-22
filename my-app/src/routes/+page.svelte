@@ -17,7 +17,7 @@
     let currentFact = $state(1);
     let totalFacts = $state(0);
     let viewedFacts = $state([]);
-
+    
     let shareMsg = $state('');
 
     let allViewed = $derived(viewedFacts.length === totalFacts && totalFacts > 0);
@@ -262,6 +262,7 @@
     .secret-page-unlock button {
         background-color: #eeb199;
         color: white;
+
         border: 1px solid #e6a991; 
         padding: 12px 24px; 
         border-radius: 10px; 
@@ -281,6 +282,7 @@
         font-family: 'Google Sans Code', monospace;
         font-size: 6rem;
         font-weight: 800;
+
         color: var(--accent-color);
 
         margin-top: 0rem;
