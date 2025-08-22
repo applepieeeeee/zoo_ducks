@@ -55,12 +55,6 @@
 
 <Banner />
 
-<main> 
-    <h1> You found the secret page!</h1>
-    <p>As your reward, you get to play with Ducky</p>
-    <button on:click={() => window.history.back()}> Go back </button>
-</main>
-
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Ballet&display=swap');
 
@@ -92,6 +86,7 @@
     main {
         font-family: 'Google Sans Code', monospace;
         text-align: center;
+        justify-content: center;
         padding: 2rem;
 
         box-sizing: border-box;
@@ -116,4 +111,34 @@
         animation: fade-in 0.8s ease-out forwards;
     }
 
+    p{
+        font-size: 1.25rem;
+        color: #d7a349;
+    }
+
+    .ducky-hightlight{
+        font-weight: 700;
+        color: #e1c94f;
+    }
+
+    .duck-interaction-area{
+        position: relative;
+        width: 12rem;
+        height: 12rem;
+
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 2rem;
+
+        transition: all 0.3s ease-in-out;
+        transform: translate(var(--duck-x, 0px), var(--duck-y, 0px));
+    }
+
 </style>
+
+<div class = "main-page-wrapper">
+    <main>
+        <h1> You found the secret page! </h1>
+        <p> As your rewards, you get to play with <span class = "ducky-hightlight"> Ducky </span></p>
+    </main>
+</div>
