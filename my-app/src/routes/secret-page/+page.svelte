@@ -1,5 +1,16 @@
 <script>
     import Banner from "$lib/Banner.svelte"; 
+
+    const DUCK_IMAGES = {
+        default: "/default.png",
+        sleep: "/sleep.png",
+        WHAT: "/WHAT.png",
+        joy: "/joy.png",
+        love: "/love.png",
+        body: "/body.png"
+    }
+
+    
 </script>
 
 <Banner />
