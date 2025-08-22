@@ -2,8 +2,8 @@
     {
         "id": 1,
         "title": "Waterproof feathers",
-        "description": "Ducks have waterproof feathers, which have a waxy coating that repels water.",
-    }
+        "description": "Ducks have waterproof feathers, which have a waxy coating that repels water."
+    },
 
     {
         "id": 2,
@@ -15,7 +15,7 @@
         "id": 3,
         "title": "Regional Accents",
         "description": "Ducks have regional accents! Ducks from London have a rougher quack because they live in a noisy city, while ducks in the country make more relaxed quacks."
-    }
+    },
 
     {
         "id": 4,
