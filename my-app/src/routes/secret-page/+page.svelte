@@ -68,13 +68,31 @@
         --font1: 'Ballet', cursive;
     }
 
+    :global(body){
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Google Sans Code', monospace;
+    }
+
+    .main-page-wrapper {
+        min-height: 100vh;
+        background: #fcf9f4;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        padding: 2rem;
+        position: relative;
+        overflow: hidden;
+    }
+
     main {
         font-family: 'Google Sans Code', monospace;
-        margin: 0;
-        padding: 2rem;
-        box-sizing: border-box;
-
         text-align: center;
+        padding: 2rem;
     }
 
 </style>
