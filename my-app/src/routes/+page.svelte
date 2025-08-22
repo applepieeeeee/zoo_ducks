@@ -102,7 +102,7 @@
     @import url('https://fonts.googleapis.com/css2?family=Ballet&display=swap');
 
     :root {
-        --bg-color: #e7f0f8;
+        --bg-color: #dcebf1;
         --card-bg: #fffefd;
         --text-color: #301b03;
         --accent-color: #f5c875;
@@ -114,6 +114,8 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        text-align: center;
+
         background-color: var(--bg-color);
         font-family: 'Google Sans Code', monospace;
         padding: 1rem;
@@ -150,7 +152,7 @@
     .fact-title {
         font-family: 'Google Sans Code', monospace;
 
-        font-size: 4rem;
+        font-size: 3rem;
         font-weight: 700;
         letter-spacing: 0.06em;
 
@@ -233,7 +235,7 @@
     
     .title {
         font-family: 'Ballet', cursive;
-        font-size: 5rem;
+        font-size: 6rem;
         font-weight: 800;
         color: var(--accent-color);
 
