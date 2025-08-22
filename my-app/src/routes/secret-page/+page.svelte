@@ -47,9 +47,9 @@
 
     function startWhatTimer(){
         clearInterval(whatInterval);
-        whatInterval = setInterval((){
+        whatInterval = setInterval(() => {
             const random = Math.random();
-            if (randomChance < (1/60)){
+            if (random < (1/60)){
                 updateFace(DUCK_IMAGES.WHAT);
                 updateMessage("WHAT??? HELLO?? oh it's you");
                 petCount = 0;
@@ -62,7 +62,6 @@
             }
         }, 1000);
     }
-
 
     function duckClick(){
         lastInteractionTime = Date.now();
@@ -92,10 +91,15 @@
     onMount(() => {
         updateFace(DUCK_IMAGES.default);
         updateMessage("play with ducky!");
+
+        resetSleepTimer();
+        startWhatTimer();
     });
 
     onDestroy(() => {
         clearTimeout(timeout);
+        clearTimeout(sleepTimer);
+        clearInterval(whatInterval);
     });
 
 </script>
