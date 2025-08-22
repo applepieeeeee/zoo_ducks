@@ -65,6 +65,8 @@
         <span class = "title-letter">s</span>
     </h1>
 
+    <h2 class = "subtitle"> Learn all about ducks! </h2>
+
     <div class="fact-card">
         <div class="fact-content">
             <div class="fact-image">
@@ -119,6 +121,10 @@
         background-color: var(--bg-color);
         font-family: 'Google Sans Code', monospace;
         padding: 1rem;
+
+        margin-bottom: -10px;
+        margin-top: -22px;
+        margin-left: -20px;
     }
 
     .fact-card {
@@ -251,6 +257,30 @@
     .title-letter:hover{
         color: #be6326;
         transform: translateY(-2px);
+    }
+
+    .subtitle{
+        font-family: 'Google Sans Code', monospace;
+        font-size: 1.8rem;
+        font-weight: 500;
+        color: #cd8834;
+        
+        margin-top: 0;
+        margin-bottom: 2rem;
+
+        opacity: 0;
+        animation: fadeIn 2s ease-in-out forwards;
+    }
+
+    @keyframes fadeIn{
+        from{
+            opacity: 0;
+            transform: translateY(20px);
+        } 
+        to{
+            opacity: 1;
+            transofmr: translateY(0);
+        }
     }
 
 </style>
