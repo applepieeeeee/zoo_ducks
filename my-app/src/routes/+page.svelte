@@ -318,7 +318,7 @@
         } 
         to{
             opacity: 1;
-            transofmr: translateY(0);
+            transform: translateY(0);
         }
     }
 
