@@ -17,7 +17,7 @@
     let currentFact = $state(1);
     let totalFacts = $state(0);
     let viewedFacts = $state([]);
-    
+
     let shareMsg = $state('');
 
     let allViewed = $derived(viewedFacts.length === totalFacts && totalFacts > 0);
@@ -83,6 +83,7 @@
 </svelte:head>
 
 <main class="container">
+
      <h1 class = "title">
         <span class = "title-letter">D</span>
         <span class = "title-letter">u</span>
@@ -90,7 +91,7 @@
         <span class = "title-letter">k</span>
         <span class = "title-letter">s</span>
     </h1>
-
+    
     <h2 class = "subtitle"> Learn all about ducks! </h2>
 
     <div class="fact-card">
@@ -219,6 +220,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+
         width: 100%;
         margin-top: 1rem;
     }

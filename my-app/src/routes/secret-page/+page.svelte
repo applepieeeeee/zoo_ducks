@@ -255,10 +255,6 @@
         to{ opacity: 1; transform: translateY(0); }
     }
 
-    .animate-fade-in{
-        animation: fade-in 0.8s ease-out-forwards;
-    }
-
 </style>
 
 <Banner />
@@ -299,5 +295,6 @@
         </p>
 
         <button on:click={goBack} class = "go-back-button"> Go back</button>
+
     </main>
 </div>
