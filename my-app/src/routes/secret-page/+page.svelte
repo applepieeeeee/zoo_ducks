@@ -37,12 +37,12 @@
     function resetSleepTimer(){
         clearTimeout(sleepTimer);
         sleepTimer = setTimeout(() =>{
-            if (Date.now() - lastInteractionTime >= 7000){
+            if (Date.now() - lastInteractionTime >= 5000){
                 updateFace(DUCK_IMAGES.sleep);
                 updateMessage("zzzz ducky is sleeping....");
                 petCount = 0;
             }
-        }, 7000);
+        }, 5000);
     }
 
     function startWhatTimer(){
