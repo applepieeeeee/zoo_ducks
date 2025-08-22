@@ -205,6 +205,15 @@
         transform: scale(0.95);
     }
 
+    @keyframes fade-in{
+        from{ opacity: 0; transform: translateY(20px); }
+        to{ opacity: 1; transform: translateY(0); }
+    }
+
+    .animate-fade-in{
+        animation: fade-in 0.8s ease-out-forwards;
+    }
+
 </style>
 
 <div class = "main-page-wrapper">
@@ -218,6 +227,7 @@
             on:click = {duckClick}
             type = "button"
             aria-label = "Play with Ducky"
+            style= "--duck-x: {duckX}; --duck-y: {duckY};"
 
             <img
                 src = {DUCK_IMAGES.body}
