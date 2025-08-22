@@ -13,6 +13,7 @@
 
     let currentFaceSrc = DUCK_IMAGES.default;
     let duckMessage = "play with ducky!";
+
     let duckX = 0;
     let duckY = 0;
 
@@ -66,7 +67,7 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: 'Google Sans Code', monospace;
+        font-family: var(--font1);
     }
 
     .main-page-wrapper {
@@ -117,7 +118,7 @@
     }
 
     .ducky-hightlight{
-        font-weight: 700;
+        font-weight: 900;
         color: #e1c94f;
     }
 
@@ -132,6 +133,12 @@
 
         transition: all 0.3s ease-in-out;
         transform: translate(var(--duck-x, 0px), var(--duck-y, 0px));
+
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        outline: none;
     }
 
     .duck-image{
@@ -143,7 +150,7 @@
         height:100%;
 
         object-fit:contain;
-        border-radius: 1000px;
+        border-radius: 8000px;
         transition: transform 0.5s;
     }
 
@@ -164,7 +171,7 @@
         font-size: 0.9rem;
         padding: 0.25rem 0.75rem;
 
-        border-radius: 1000px;
+        border-radius: 8000px;
         white-space: nowrap;
         transition: all 0.3s ease-in-out;
         opacity: 0.95;
@@ -175,7 +182,7 @@
     }
 
     .go-back-button {
-        background-color: #2563eb;
+        background-color: #638485;
         color: #fff;
 
         font-weight: 700;
@@ -187,6 +194,15 @@
         transition: all 0.3s ease-in-out;
         outline: none;
         border: none;
+    }
+
+    .go-back-button:hover{
+        background-color: #475c65;
+        transform: scale(1.05);
+    }
+
+    .go-back-button:active{
+        transform: scale(0.95);
     }
 
 </style>
