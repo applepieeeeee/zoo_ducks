@@ -24,9 +24,6 @@
     let fact_title = $derived(facts[currentFact - 1]?.title || "");
     let fact_image = $derived(facts[currentFact - 1]?.image_url || "");
 
-    let randomFact = $state("Generate a random duck fact!");
-    let randomFactLoading = $state(false);
-
     onMount(async () => {
         const response = await fetch(`${base}/facts.json`);
         const data = await response.json();
@@ -34,8 +31,6 @@
         facts = data;
         loaded = true;
         totalFacts = facts.length;
-
-        generateRandomFact();
     });
 
     function nextFact() {
@@ -52,16 +47,6 @@
         if (id && !viewedFacts.includes(id)) {
             viewedFacts = [...viewedFacts, id];
         }
-    }
-
-    function generateRandomFact(){
-        randomFactLoading = true;
-        randomFact = "Loading...";
-
-        const randomIndex = Math.floor(Math.random() * totalFacts);
-        randomFact = facts[randomIndex].description;
-
-        randomFactLoading = false;
     }
 
 </script>
@@ -109,19 +94,6 @@
                 <button onclick={() => window.location.href = '/secret-page'}>Open secret page</button>
             </div>
         {/if}
-    </div>
-
-    <div class = "random-fact-container">
-        <h2 class = "random-fact-heading">Random Duck Facts!</h2>
-        <p class = "random-fact">{randomFact}</p>
-
-        <button onclick = {generateRandomFact} disabled = {randomFactLoading} class = "generate-button">
-            {#if randomFactLoading}
-                Selecting...
-            {:else}
-                Generate New Fact
-            {/if}
-        </button>
 
     </div>
 </main>
@@ -167,7 +139,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        text-align: center;
     }
 
     .fact-image img {
@@ -239,10 +210,6 @@
         padding: 2rem;
         border-radius: 8px;
     }
-
-    .secret-page-unlock h2{
-        color: #be7e08;
-    }
     
     .secret-page-unlock button {
         background-color: #eeb199;
@@ -284,43 +251,6 @@
     .title-letter:hover{
         color: #be6326;
         transform: translateY(-2px);
-    }
-
-    .random-fact-container{
-        max-width: 600px;
-        margin-top: 3rem;
-        padding: 2rem;
-    }
-
-    .random-fact-heading{
-        font-family: 'Google Sans Code', monospace;
-        font-size: clamp(1.5rem, 4vw, 2.2rem);
-        font-weight: 700;
-        color: var(--accent-color);
-        margin-bottom: 1.5rem;
-
-        text-align: center;
-    } 
-
-    .generate-button{
-        background-color: #b6d1ca;
-        border-radius: 10px;
-        border-color: #b6d1ca;
-    
-        width: auto;
-        height: auto;
-        padding: 12px 24px;
-        font-size: 1.1rem;
-        font-family: 'Google Sans Code', monospace;
-        margin-bottom: 100px;
-
-        text-align: center;
-    }
-
-    .generate-button:hover{
-        background-color: #a5c8b6;
-        border-color: #b6d1ca;
-        margin-bottom: 100px;
     }
 
 </style>
