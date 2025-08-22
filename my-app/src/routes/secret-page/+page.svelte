@@ -71,12 +71,10 @@
     main {
         font-family: 'Google Sans Code', monospace;
         margin: 0;
-        padding: 0;
+        padding: 2rem;
         box-sizing: border-box;
+
+        text-align: center;
     }
 
-    main{
-        text-align: center;
-        padding: 2rem;
-    }
 </style>
