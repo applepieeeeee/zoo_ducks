@@ -152,10 +152,41 @@
         left: 0%;
         width: 100%;
         height: 100%;
+        transition: filter 0.5s ease-in-out, transform 0.5s ease-in-out;
     }
 
     .duck-message-bubble{
         position: absolute;
+        top: -2.5rem;
+        background-color: #8ea8af;
+
+        color: #fff;  
+        font-size: 0.9rem;
+        padding: 0.25rem 0.75rem;
+
+        border-radius: 1000px;
+        white-space: nowrap;
+        transition: all 0.3s ease-in-out;
+        opacity: 0.95;
+        
+        transform: translateX(-50%);
+        left: 50%;
+
+    }
+
+    .go-back-button {
+        background-color: #2563eb;
+        color: #fff;
+
+        font-weight: 700;
+        padding: 0.8rem 1.5rem;
+        
+        border-radius: 1000px;
+        box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+
+        transition: all 0.3s ease-in-out;
+        outline: none;
+        border: none;
     }
 
 </style>
@@ -189,5 +220,10 @@
             </div>
         ></button>
 
+        <p class = "instructions-text">
+            Click Ducky to pet him!
+        </p>
+
+        <button on:click={goBack} class = "go-back-button"> Go back</button>
     </main>
 </div>
