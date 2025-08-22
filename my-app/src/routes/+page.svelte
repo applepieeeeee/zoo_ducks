@@ -112,6 +112,7 @@
 
     main {
         min-height: 100vh;
+
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -129,10 +130,13 @@
 
     .fact-card {
         background-color: var(--card-bg);
+
         border-radius: 12px;
         padding: 3rem;
+
         max-width: 500px;
         width: 100%;
+
         text-align: center;
         transition: transform 0.3s ease;
     }
@@ -151,6 +155,7 @@
         width: 100%;
         max-width: 300px;
         height: auto;
+        
         border-radius: 8px;
         margin-bottom: 1rem;
     }
