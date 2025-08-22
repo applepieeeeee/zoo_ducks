@@ -226,14 +226,17 @@
     .nav-button {
         background-color: var(--accent-color);
         color: white;
+
         border: none;
         border-radius: 50%;
+
         width: 44px;
         height: 44px;
-        cursor: pointer;
+
         display: flex;
         justify-content: center;
         align-items: center;
+        
         transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
