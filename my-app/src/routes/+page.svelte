@@ -53,15 +53,15 @@
         if (totalFacts === 0) return;
 
         let randomIndex;
+        let ids;
         do{
             randomIndex = Math.floor(Math.random() * totalFacts);
-        } while (randomIndex + 1 === currentFact && totalFacts>1);
+            ids = facts[randomIndex]?.id;
+        } while (ids === facts[currentFact-1]?.id && totalFacts>1);
 
-        current = randomIndex+1;
-        const id = facts[currentFact-1]?.id;
-        if (id && !viewedFacts.includes(id)){
-            viewedFacts = [...viewedFacts, id];
-        }
+        displayedRandomFactTitle = facts[randomIndex]?.title ||"";
+        displayedRandomFactDesc = facts[randomIndex]?.description ||"";
+        isRandomFactVisible = true;
     }
 
 </script>
@@ -94,17 +94,12 @@
             <button onclick={prevFact} class="nav-button" aria-label="Previous fact">
                 ◀
             </button>
-            
+
             <span class="fact-counter">{currentFact} / {totalFacts}</span>
 
             <button onclick={nextFact} class="nav-button" aria-label="Next fact">
                 ▶
             </button>
-
-            <button onclick={randomFact} class= "nav-button random-button" aria-label = "Random Fact">
-                🦆
-            </button>
-            
         </div>
 
         {#if allViewed}
@@ -113,6 +108,19 @@
                 <button onclick={() => window.location.href = '/secret-page'}>Open secret page</button>
             </div>
         {/if}
+
+        <div class = "random-fact-widget">
+            <button onclick = {randomFact} class = "nav-button random-button" area-label= "show random fact !">
+                🦆
+            </button>
+
+            {#if isRandomFactVisible}
+                <div class = "random-fact-content">
+                    <h3> {displayedRandomFactTitle}</h3>
+                    <p> {displayedRandomFactDesc}</p>
+                </div>
+            {/if}
+        </div>
 
     </div>
 </main>
@@ -284,6 +292,30 @@
     .title-letter:hover{
         color: #be6326;
         transform: translateY(-2px);
+    }
+
+    .random-fact-widget{
+        background-color: var(--card-bg);
+        border-radius: 12px;
+
+        padding: 1.5rem;
+        max-width: 500px;
+    }
+
+    .random-fact-widget .random-button{
+        position: absolute;
+    }
+
+    .random-fact-content{
+        color: var(--text-color);
+    }
+
+    .random-fact-content h3{
+        font-family: 'Google Sans Code', monospace;
+    }
+
+    .random-fact-content p{
+        font-size: 0.95rem;
     }
 
 </style>
