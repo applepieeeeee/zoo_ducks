@@ -77,7 +77,7 @@
 
     .main-page-wrapper {
         min-height: 100vh;
-        background: #fcf9f4;
+        background: #ebe6de;
         
         display: flex;
         flex-direction: column;
@@ -93,6 +93,19 @@
         font-family: 'Google Sans Code', monospace;
         text-align: center;
         padding: 2rem;
+
+        box-sizing: border-box;
+        background-color: white;
+
+        border-radius: 3.12rem;
+        max-width: 32rem;
+
+        width: 100%;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    main:hover{
+        transform: scale(1.05);
     }
 
 </style>
