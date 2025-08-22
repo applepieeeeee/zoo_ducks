@@ -18,6 +18,10 @@
     let totalFacts = $state(0);
     let viewedFacts = $state([]);
 
+    let title = $state("");
+    let desc = $state("");
+    let isRandomFactVisible = $state(false);
+
     let allViewed = $derived(viewedFacts.length === totalFacts && totalFacts > 0);
 
     let fact_desc = $derived(facts[currentFact - 1]?.description || "");
@@ -59,8 +63,8 @@
             ids = facts[randomIndex]?.id;
         } while (ids === facts[currentFact-1]?.id && totalFacts>1);
 
-        displayedRandomFactTitle = facts[randomIndex]?.title ||"";
-        displayedRandomFactDesc = facts[randomIndex]?.description ||"";
+        title = facts[randomIndex]?.title ||"";
+        desc = facts[randomIndex]?.description ||"";
         isRandomFactVisible = true;
     }
 
@@ -109,20 +113,20 @@
             </div>
         {/if}
 
-        <div class = "random-fact-widget">
+    </div>
+
+    <div class = "random-fact-widget">
             <button onclick = {randomFact} class = "nav-button random-button" area-label= "show random fact !">
                 🦆
             </button>
 
             {#if isRandomFactVisible}
                 <div class = "random-fact-content">
-                    <h3> {displayedRandomFactTitle}</h3>
-                    <p> {displayedRandomFactDesc}</p>
+                    <h3> {title}</h3>
+                    <p> {desc}</p>
                 </div>
             {/if}
         </div>
-
-    </div>
 </main>
 
 <style>
@@ -295,7 +299,7 @@
     }
 
     .random-fact-widget{
-        background-color: var(--card-bg);
+        background-color: #5a6653;
         border-radius: 12px;
 
         padding: 1.5rem;
