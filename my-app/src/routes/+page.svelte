@@ -114,11 +114,6 @@
     <div class = "random-fact-container">
         <h2 class = "random-fact-heading">Random Duck Facts!</h2>
         <p class = "random-fact">{randomFact}</p>
-        {#if randomFactLoading}
-            <p>Loading...</p>
-        {:else}
-            <p>{randomFact}</p>
-        {/if}
 
         <button onclick = {generateRandomFact} disabled = {randomFactLoading} class = "generate-button">
             {#if randomFactLoading}
@@ -291,7 +286,35 @@
     }
 
     .random-fact-container{
-        
+        max-width: 600px;
+        margin-top: 3rem;
+    }
+
+    .random-fact-heading{
+        font-family: 'Google Sans Code', monospace;
+        font-size: clamp(1.5rem, 4vw, 2.2rem);
+        font-weight: 700;
+        color: var(--accent-color);
+        margin-bottom: 1.5rem;
+    }
+
+    .generate-button{
+        background-color: #b6d1ca;
+        border-radius: 10px;
+        border-color: #b6d1ca;
+    
+        width: auto;
+        height: auto;
+        padding: 12px 24px;
+        font-size: 1.1rem;
+        font-family: 'Google Sans Code', monospace;
+        margin-bottom: 100px;
+    }
+
+    .generate-button:hover{
+        background-color: #a5c8b6;
+        border-color: #b6d1ca;
+        margin-bottom: 100px;
     }
 
 </style>
