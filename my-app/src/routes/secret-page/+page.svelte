@@ -108,4 +108,12 @@
         transform: scale(1.05);
     }
 
+    h1{
+        font-size: 3rem;
+        font-weight: 800;
+        color: #b8813a;
+        margin-bottom: 1rem;
+        animation: fade-in 0.8s ease-out forwards;
+    }
+
 </style>
