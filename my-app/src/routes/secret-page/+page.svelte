@@ -62,6 +62,19 @@
 </main>
 
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Ballet&display=swap');
+
+    :root{
+        --font1: 'Ballet', cursive;
+    }
+
+    main {
+        font-family: 'Google Sans Code', monospace;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
     main{
         text-align: center;
         padding: 2rem;
