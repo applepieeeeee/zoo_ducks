@@ -167,6 +167,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        text-align: center;
     }
 
     .fact-image img {
@@ -288,6 +289,7 @@
     .random-fact-container{
         max-width: 600px;
         margin-top: 3rem;
+        padding: 2rem;
     }
 
     .random-fact-heading{
@@ -296,7 +298,9 @@
         font-weight: 700;
         color: var(--accent-color);
         margin-bottom: 1.5rem;
-    }
+
+        text-align: center;
+    } 
 
     .generate-button{
         background-color: #b6d1ca;
@@ -309,6 +313,8 @@
         font-size: 1.1rem;
         font-family: 'Google Sans Code', monospace;
         margin-bottom: 100px;
+
+        text-align: center;
     }
 
     .generate-button:hover{
