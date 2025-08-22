@@ -45,6 +45,24 @@
         }, 7000);
     }
 
+    function startWhatTimer(){
+        clearInterval(whatInterval);
+        whatInterval = setInterval((){
+            const random = Math.random();
+            if (randomChance < (1/60)){
+                updateFace(DUCK_IMAGES.WHAT);
+                updateMessage("WHAT??? HELLO?? oh it's you");
+                petCount = 0;
+
+                clearTimeout(timeout);
+                timeout = setTimeout(() => {
+                    updateFace(DUCK_IMAGES.default);
+                    updateMessage("play with ducky!");
+                }, 3000);
+            }
+        }, 1000);
+    }
+
     function duckClick(){
         clearTimeout(timeout);
 
