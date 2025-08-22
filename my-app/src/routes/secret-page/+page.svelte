@@ -19,6 +19,13 @@
 
     let timeout;
 
+    let sleepTimerID;
+    let whatIntervalID;
+
+
+    let petCount = 0;
+    let lastInteractionTime = Date.now();
+
     function updateFace(newSrc){
         currentFaceSrc = newSrc;
     }
