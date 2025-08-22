@@ -56,9 +56,21 @@
     async function shareFact(){
         const textToCopy = `Duck Fact: ${fact_title}\n${fact_desc}`;
         try{
+            const textarea = document.createElement('textarea');
+            textarea.value = textToCopy;
+            textarea.style.position = 'fixed';
+            textarea
 
+            docyment.body.appendChild(textarea);
+            textarea.focus();
+            textarea.select();
+
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            shareMsg = 'Copied to clipboard!';
         } catch (err){
-
+            console.error('Failed to copy: ', err);
+            shareMsg = 'Failed to copy :(';
         }
         setTimeout(() => { shareMsg = ''; }, 4000);
     }
@@ -102,6 +114,14 @@
                 ▶
             </button>
             
+        </div>
+
+        {#if shareMsg}
+            <div class="share-message">{shareMsg}</div>
+        {/if}
+
+        <div class = "share-section">
+            <button onclick = {shareFact} class = "share-button"> Share Fact </button>
         </div>
 
         {#if allViewed}
@@ -299,6 +319,54 @@
         to{
             opacity: 1;
             transofmr: translateY(0);
+        }
+    }
+
+    .share-section{
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .share-button{
+        background-color: #687e5b;
+        color: white;
+
+        padding: 12px 24px;
+        border-radius: 10px;
+        font-size: 1.1rem;
+
+        font-family: 'Google Sans Code', monospace;
+        transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .share-button:hover{
+        background-color: #4c5e40;
+        transform: scale(1.04);
+    }
+
+    .share-message{
+        margin-top: 1rem;
+        padding: 0.5rem 1rem;
+        background-color: #b0caa1;
+        color: white;
+
+        border-radius: 5px;
+        font-size: 0.92rem;
+        text-align: center;
+
+        animation: fadeOut 3s forwards;
+    }
+
+    @keyframes fadeOut{
+        0%{
+            opacity: 1;
+        }
+        60%{
+            opacity: 1;
+        }
+        100%{
+            opacity: 0;
+            display: none;
         }
     }
 
