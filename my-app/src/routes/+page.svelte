@@ -5,14 +5,7 @@
     
     let loaded = $state(false); 
 
-    let facts = $state([
-        {
-            "title": "Loading...",
-            "description": "",
-            "image_url": "",
-            "id": 0 
-        }
-    ]);
+    let facts = $state([]);
 
     let currentFact = $state(1);
     let totalFacts = $state(0);
@@ -32,14 +25,14 @@
     let fact_image = $derived(facts[currentFact - 1]?.image_url || "");
 
     onMount(async () => {
-        const mainResponse = await fetch('$base/facts.json');
-        const mainData = await mainFactsResponse.json;
+        const mainResponse = await fetch('${base}/facts.json');
+        const mainData = await mainResponse.json();
 
         facts = mainData;
         totalFacts = facts.length;
 
         const randomResponse = await fetch('${base}/randomfacts.json');
-        const randomData = await randomFactsResponse.json();
+        const randomData = await randomResponse.json();
 
         randomFacts = randomData;
         totalRandomFacts = randomFacts.length;
@@ -47,9 +40,9 @@
         loaded = true;
 
         if (facts.length > 0) {
-            const id = facts[0].id;
+            const initialId = facts[0].id;
             if (initialId && !viewedFacts.includes(initialId)) {
-                viewedFacts = [...viewedFacts, id];
+                viewedFacts = [...viewedFacts, initialId];
             }
         }
     });
@@ -74,11 +67,11 @@
         if (totalRandomFacts === 0) return;
 
         let randomIndex;
-        let ids;
+        let newFactTitle;
         do{
             randomIndex = Math.floor(Math.random() * totalRandomFacts);
-            ids = randomFacts[randomIndex]?.id;
-        } while (ids === (title == "" ? null : ids) && totalRandomFacts > 1);
+            newFactTitle = randomFacts[randomIndex]?.title;
+        } while (newFactTitle === title && totalRandomFacts > 1);
 
         title = randomFacts[randomIndex]?.title ||"";
         desc = randomFacts[randomIndex]?.description ||"";
@@ -133,17 +126,18 @@
     </div>
 
     <div class = "random-fact-widget">
-            <button onclick = {randomFact} class = "nav-button random-button" area-label= "show random fact !">
-                🦆
-            </button>
+        <h3 class = "random-widget-title"> Ranodm Duck Facts </h3>
+        <button onclick = {randomFact} class = "nav-button random-button" area-label= "show random fact !">
+            🦆
+        </button>
 
-            {#if isRandomFactVisible}
-                <div class = "random-fact-content">
-                    <h3> {title}</h3>
-                    <p> {desc}</p>
-                </div>
-            {/if}
-        </div>
+        {#if isRandomFactVisible}
+            <div class = "random-fact-content">
+                <h3> {title}</h3>
+                <p> {desc}</p>
+            </div>
+        {/if}
+    </div>
 </main>
 
 <style>
@@ -177,6 +171,8 @@
         width: 100%;
         text-align: center;
         transition: transform 0.3s ease;
+
+        margin-top: 2rem;
     }
 
     .fact-card:hover {
