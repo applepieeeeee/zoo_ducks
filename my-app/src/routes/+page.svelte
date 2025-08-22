@@ -109,6 +109,24 @@
                 <button onclick={() => window.location.href = '/secret-page'}>Open secret page</button>
             </div>
         {/if}
+    </div>
+
+    <div class = "random-fact-container">
+        <h2 class = "random-fact-heading">Random Duck Facts!</h2>
+        <p class = "random-fact">{randomFact}</p>
+        {#if randomFactLoading}
+            <p>Loading...</p>
+        {:else}
+            <p>{randomFact}</p>
+        {/if}
+
+        <button onclick = {generateRandomFact} disabled = {randomFactLoading} class = "generate-button">
+            {#if randomFactLoading}
+                Selecting...
+            {:else}
+                Generate New Fact
+            {/if}
+        </button>
 
     </div>
 </main>
@@ -270,6 +288,10 @@
     .title-letter:hover{
         color: #be6326;
         transform: translateY(-2px);
+    }
+
+    .random-fact-container{
+        
     }
 
 </style>
