@@ -63,16 +63,26 @@
         }, 1000);
     }
 
+
     function duckClick(){
+        lastInteractionTime = Date.now();
+        resetSleepTimer();
         clearTimeout(timeout);
 
-        updateFace(DUCK_IMAGES.joy);
-        updateMessage("ducky is happy!");
+        petCount++;
 
-        timeout = setTimeout(() => {
-            updateFace(DUCK_IMAGES.default);
-            updateMessage("play with ducky!");
-        }, 1800);
+        if (petCount >= 10){
+            updateFace(DUCK_IMAGES.love);
+            updateMessage("ducky loves u sm");
+            petCount = 0;
+        } else {
+            updateFace(DUCK_IMAGES.joy);
+            updateMessage("ducky is happy!");
+            timeout = setTimeout(() => {
+                updateFace(DUCK_IMAGES.default);
+                updateMessage("play with ducky!");
+            }, 1800);
+        }
     }
 
     function goBack(){
