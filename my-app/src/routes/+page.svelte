@@ -24,6 +24,9 @@
     let fact_title = $derived(facts[currentFact - 1]?.title || "");
     let fact_image = $derived(facts[currentFact - 1]?.image_url || "");
 
+    let randomFact = $state("Generate a random duck fact!");
+    let randomFactLoading = $state(false);
+
     onMount(async () => {
         const response = await fetch(`${base}/facts.json`);
         const data = await response.json();
@@ -31,6 +34,8 @@
         facts = data;
         loaded = true;
         totalFacts = facts.length;
+
+        generateRandomFact();
     });
 
     function nextFact() {
@@ -47,6 +52,16 @@
         if (id && !viewedFacts.includes(id)) {
             viewedFacts = [...viewedFacts, id];
         }
+    }
+
+    function generateRandomFact(){
+        randomFactLoading = true;
+        randomFact = "Loading...";
+
+        const randomIndex = Math.floor(Math.random() * totalFacts);
+        randomFact = facts[randomIndex].description;
+
+        randomFactLoading = false;
     }
 
 </script>
