@@ -228,11 +228,12 @@
             type = "button"
             aria-label = "Play with Ducky"
             style= "--duck-x: {duckX}; --duck-y: {duckY};"
+        >
 
-            <img
-                src = {DUCK_IMAGES.body}
-                alt = "ducky body"
-                class = "duck-image"
+        <img
+            src = {DUCK_IMAGES.body}
+            alt = "ducky body"
+            class = "duck-image"
             />
 
             <img
@@ -244,7 +245,7 @@
             <div class = "duck-message-bubble">
                 {duckMessage}
             </div>
-        ></button>
+        </button>
 
         <p class = "instructions-text">
             Click Ducky to pet him!
