@@ -234,7 +234,7 @@
     }
     
     .title {
-        font-family: 'Ballet', cursive;
+        font-family: 'Google Sans Code', monospace;
         font-size: 6rem;
         font-weight: 800;
         color: var(--accent-color);
