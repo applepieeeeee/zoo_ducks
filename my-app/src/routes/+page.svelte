@@ -18,6 +18,9 @@
     let totalFacts = $state(0);
     let viewedFacts = $state([]);
 
+    let randomFacts = $state([]);
+    let totalRandomFacts = $state(0);
+
     let title = $state("");
     let desc = $state("");
     let isRandomFactVisible = $state(false);
@@ -29,12 +32,26 @@
     let fact_image = $derived(facts[currentFact - 1]?.image_url || "");
 
     onMount(async () => {
-        const response = await fetch(`${base}/facts.json`);
-        const data = await response.json();
-        
-        facts = data;
-        loaded = true;
+        const mainResponse = await fetch('$base/facts.json');
+        const mainData = await mainFactsResponse.json;
+
+        facts = mainData;
         totalFacts = facts.length;
+
+        const randomResponse = await fetch('${base}/randomfacts.json');
+        const randomData = await randomFactsResponse.json();
+
+        randomFacts = randomData;
+        totalRandomFacts = randomFacts.length;
+
+        loaded = true;
+
+        if (facts.length > 0) {
+            const id = facts[0].id;
+            if (initialId && !viewedFacts.includes(initialId)) {
+                viewedFacts = [...viewedFacts, id];
+            }
+        }
     });
 
     function nextFact() {
@@ -54,17 +71,17 @@
     }
     
     function randomFact(){
-        if (totalFacts === 0) return;
+        if (totalRandomFacts === 0) return;
 
         let randomIndex;
         let ids;
         do{
-            randomIndex = Math.floor(Math.random() * totalFacts);
-            ids = facts[randomIndex]?.id;
-        } while (ids === facts[currentFact-1]?.id && totalFacts>1);
+            randomIndex = Math.floor(Math.random() * totalRandomFacts);
+            ids = randomFacts[randomIndex]?.id;
+        } while (ids === (title == "" ? null : ids) && totalRandomFacts > 1);
 
-        title = facts[randomIndex]?.title ||"";
-        desc = facts[randomIndex]?.description ||"";
+        title = randomFacts[randomIndex]?.title ||"";
+        desc = randomFacts[randomIndex]?.description ||"";
         isRandomFactVisible = true;
     }
 
