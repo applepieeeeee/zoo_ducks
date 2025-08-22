@@ -61,7 +61,7 @@
             textarea.style.position = 'fixed';
             textarea
 
-            docyment.body.appendChild(textarea);
+            document.body.appendChild(textarea);
             textarea.focus();
             textarea.select();
 
@@ -236,7 +236,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        
+
         transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
