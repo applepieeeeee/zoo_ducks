@@ -336,6 +336,8 @@
 
         padding: 12px 24px;
         border-radius: 10px;
+        border: 1px solid #687e5b;
+
         font-size: 1.1rem;
 
         font-family: 'Google Sans Code', monospace;
@@ -345,6 +347,7 @@
     .share-button:hover{
         background-color: #4c5e40;
         transform: scale(1.04);
+        border: 1px solid #687e5b;
     }
 
     .share-message{
