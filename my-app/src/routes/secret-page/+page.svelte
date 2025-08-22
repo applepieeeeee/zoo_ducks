@@ -10,7 +10,7 @@
         love: "/love.png",
         body: "/body.png"
     }
-
+    
     let currentFaceSrc = DUCK_IMAGES.default;
     let duckMessage = "play with ducky!";
 
@@ -104,7 +104,6 @@
 
 </script>
 
-<Banner />
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Ballet&display=swap');
@@ -244,8 +243,10 @@
         transition: all 0.3s ease-in-out;
         outline: none;
         border: none;
-    }
 
+        font-family: 'Google Sans Code', monospace;
+    }
+    
     .go-back-button:hover{
         background-color: #475c65;
         transform: scale(1.05);
@@ -265,6 +266,8 @@
     }
 
 </style>
+
+<Banner />
 
 <div class = "main-page-wrapper">
     <main>

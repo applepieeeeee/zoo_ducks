@@ -57,6 +57,14 @@
 </svelte:head>
 
 <main class="container">
+     <h1 class = "title">
+        <span class = "title-letter">D</span>
+        <span class = "title-letter">u</span>
+        <span class = "title-letter">c</span>
+        <span class = "title-letter">k</span>
+        <span class = "title-letter">s</span>
+    </h1>
+
     <div class="fact-card">
         <div class="fact-content">
             <div class="fact-image">
@@ -103,6 +111,7 @@
     main {
         min-height: 100vh;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         background-color: var(--bg-color);
@@ -139,7 +148,7 @@
     }
 
     .fact-title {
-        font-family: 'Ballet', cursive;
+        font-family: 'Google Sans Code', monospace;
 
         font-size: 4rem;
         font-weight: 700;
@@ -220,6 +229,30 @@
 
     .secret-page-unlock button:hover{
         background-color: #b84915;
+    }
+    
+    .title {
+        font-family: 'Ballet', cursive;
+        font-size: 5rem;
+        font-weight: 800;
+        color: var(--accent-color);
+
+        margin-top: 0rem;
+        margin-bottom: 1rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    .title-letter{
+        transition: color 0.3s ease;
+        display: inline-block;
+        cursor: pointer;
+        padding: 0 0.5rem;
+    }
+
+    .title-letter:hover{
+        color: #be6326;
+        transform: translateY(-2px);
     }
 
 </style>
