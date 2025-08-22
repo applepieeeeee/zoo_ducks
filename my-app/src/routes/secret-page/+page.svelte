@@ -19,8 +19,8 @@
 
     let timeout;
 
-    let sleepTimerID;
-    let whatIntervalID;
+    let sleepTimer;
+    let whatInterval;
 
 
     let petCount = 0;
@@ -32,6 +32,17 @@
 
     function updateMessage(newMessage){
         duckMessage = newMessage;
+    }
+
+    function resetSleepTimer(){
+        clearTimeout(sleepTimer);
+        sleepTimer = setTimeout(() =>{
+            if (Date.now() - lastInteractionTime >= 7000){
+                updateFace(DUCK_IMAGES.sleep);
+                updateMessage("zzzz ducky is sleeping....");
+                petCount = 0;
+            }
+        }, 7000);
     }
 
     function duckClick(){
