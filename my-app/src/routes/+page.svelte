@@ -18,6 +18,8 @@
     let totalFacts = $state(0);
     let viewedFacts = $state([]);
 
+    let shareMsg = $state('');
+
     let allViewed = $derived(viewedFacts.length === totalFacts && totalFacts > 0);
 
     let fact_desc = $derived(facts[currentFact - 1]?.description || "");
@@ -39,6 +41,7 @@
         if (id && !viewedFacts.includes(id)) {
             viewedFacts = [...viewedFacts, id];
         }
+        shareMsg = '';
     }
 
     function prevFact() {
@@ -47,6 +50,17 @@
         if (id && !viewedFacts.includes(id)) {
             viewedFacts = [...viewedFacts, id];
         }
+        shareMsg = '';
+    }
+
+    async function shareFact(){
+        const textToCopy = `Duck Fact: ${fact_title}\n${fact_desc}`;
+        try{
+
+        } catch (err){
+
+        }
+        setTimeout(() => { shareMsg = ''; }, 4000);
     }
 
 </script>
@@ -155,7 +169,7 @@
         width: 100%;
         max-width: 300px;
         height: auto;
-        
+
         border-radius: 8px;
         margin-bottom: 1rem;
     }
