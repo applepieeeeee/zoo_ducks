@@ -149,10 +149,6 @@
         transition: transform 0.3s ease-in-out;
     }
 
-    main:hover{
-        transform: scale(1.05);
-    }
-
     h1{
         font-size: 3rem;
         font-weight: 800;
@@ -238,7 +234,6 @@
         padding: 0.8rem 1.5rem;
         
         border-radius: 1000px;
-        box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
 
         transition: all 0.3s ease-in-out;
         outline: none;
@@ -249,7 +244,6 @@
     
     .go-back-button:hover{
         background-color: #475c65;
-        transform: scale(1.05);
     }
 
     .go-back-button:active{
