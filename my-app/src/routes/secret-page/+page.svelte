@@ -219,7 +219,7 @@
 <div class = "main-page-wrapper">
     <main>
         <h1> You found the secret page! </h1>
-        <p> As your rewards, you get to play with <span class = "ducky-hightlight"> Ducky </span></p>
+        <p> As your reward, you get to play with <span class = "ducky-hightlight"> Ducky </span></p>
 
         <button
             id = "duck-interaction-area"
