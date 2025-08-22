@@ -1,6 +1,6 @@
 <script>
     import { base } from "$app/paths";
-    import { onMount } from "svelte";
+    import { onDestroy, onMount } from "svelte";
     import Banner from "$lib/Banner.svelte"; 
     
     let loaded = $state(false); 
@@ -26,6 +26,8 @@
     let fact_title = $derived(facts[currentFact - 1]?.title || "");
     let fact_image = $derived(facts[currentFact - 1]?.image_url || "");
 
+    let quackSound;
+    
     onMount(async () => {
         const response = await fetch(`${base}/facts.json`);
         const data = await response.json();
@@ -33,7 +35,23 @@
         facts = data;
         loaded = true;
         totalFacts = facts.length;
+
+        quackSound = new Audio(`${base}/quack.mp3`);
+        document.addEventListener('click', playQuack);
     });
+
+    onDestroy(() => {
+        if (quackSound){
+            document.removeEventListener('click', playQuack);
+        }
+    });
+
+    function playQuack(){
+        if (quackSound){
+            quackSound.currentTime = 0;
+            quackSound.play();
+        }
+    }
 
     function nextFact() {
         currentFact = currentFact % totalFacts === 0 ? 1 : currentFact + 1;
@@ -91,8 +109,8 @@
         <span class = "title-letter">k</span>
         <span class = "title-letter">s</span>
     </h1>
-    
-    <h2 class = "subtitle"> Learn all about ducks! </h2>
+
+    <h2 class = "subtitle"> explore this page to learn all about ducks! </h2>
 
     <div class="fact-card">
         <div class="fact-content">

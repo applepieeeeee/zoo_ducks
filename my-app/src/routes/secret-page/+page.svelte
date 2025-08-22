@@ -22,9 +22,21 @@
     let sleepTimer;
     let whatInterval;
 
-
     let petCount = 0;
     let lastInteractionTime = Date.now();
+
+    let quackSound;
+
+    onMount(async () => {
+        updateFace(DUCK_IMAGES.default);
+        updateMessage("play with ducky !");
+
+        resetSleepTimer();
+        startWhatTimer();
+        
+        quackSound = new Audio(`quack.mp3`);
+        document.addEventListener('click', playQuack);
+    });
 
     function updateFace(newSrc){
         currentFaceSrc = newSrc;
@@ -88,22 +100,24 @@
         window.history.back();
     }
 
-    onMount(() => {
-        updateFace(DUCK_IMAGES.default);
-        updateMessage("play with ducky!");
-
-        resetSleepTimer();
-        startWhatTimer();
-    });
-
     onDestroy(() => {
         clearTimeout(timeout);
         clearTimeout(sleepTimer);
         clearInterval(whatInterval);
+
+        if (quackSound){
+            document.removeEventListener('click', playQuack);
+        }
     });
 
-</script>
+    function playQuack(){
+        if (quackSound){
+            quackSound.currentTime = 0;
+            quackSound.play();
+        }
+    }
 
+</script>
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Ballet&display=swap');
@@ -118,7 +132,7 @@
         box-sizing: border-box;
         font-family: var(--font1);
     }
-
+    
     .main-page-wrapper {
         min-height: 100vh;
         background: #ebe6de;
@@ -250,6 +264,7 @@
         transform: scale(0.95);
     }
 
+
     @keyframes fade-in{
         from{ opacity: 0; transform: translateY(20px); }
         to{ opacity: 1; transform: translateY(0); }
@@ -260,6 +275,7 @@
 <Banner />
 
 <div class = "main-page-wrapper">
+
     <main>
         <h1> You found the secret page! </h1>
         <p> As your reward, you get to play with <span class = "ducky-hightlight"> Ducky </span></p>
@@ -295,6 +311,6 @@
         </p>
 
         <button on:click={goBack} class = "go-back-button"> Go back</button>
-
     </main>
+
 </div>
