@@ -1,3 +1,4 @@
+
 <script>
     import { base } from "$app/paths";
     import { onDestroy, onMount } from "svelte";
@@ -101,7 +102,6 @@
 </svelte:head>
 
 <main class="container">
-
      <h1 class = "title">
         <span class = "title-letter">D</span>
         <span class = "title-letter">u</span>
@@ -110,9 +110,10 @@
         <span class = "title-letter">s</span>
     </h1>
 
-    <h2 class = "subtitle"> explore this page to learn all about ducks! </h2>
+    <h2 class = "subtitle"> Explore this page to learn more about ducks! </h2>
 
     <div class="fact-card">
+
         <div class="fact-content">
             <div class="fact-image">
                 <img src={fact_image} alt="Image related to {fact_title}" />
@@ -121,7 +122,7 @@
             <h2 class="fact-title">{fact_title}</h2>
             <p class="fact-description">{fact_desc}</p>
         </div>
-
+    
         <div class="navigation-controls">
             <button onclick={prevFact} class="nav-button" aria-label="Previous fact">
                 ◀
@@ -157,7 +158,7 @@
     @import url('https://fonts.googleapis.com/css2?family=Ballet&display=swap');
 
     :root {
-        --bg-color: #dcebf1;
+        --bg-color: #ecf4f7;
         --card-bg: #fffefd;
         --text-color: #301b03;
         --accent-color: #f5c875;
@@ -168,11 +169,13 @@
 
         display: flex;
         flex-direction: column;
+
         justify-content: center;
         align-items: center;
         text-align: center;
-
+        
         background-color: var(--bg-color);
+
         font-family: 'Google Sans Code', monospace;
         padding: 1rem;
 
@@ -186,7 +189,7 @@
 
         border-radius: 12px;
         padding: 3rem;
-
+        
         max-width: 500px;
         width: 100%;
 
@@ -397,5 +400,4 @@
             display: none;
         }
     }
-
 </style>
