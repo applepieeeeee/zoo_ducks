@@ -1,9 +1,13 @@
 <script>
+    import {base} from "$app/paths";
     import Banner from "$lib/Banner.svelte";
     import { onDestroy, onMount } from "svelte";
 
     let images = [
-        {src: `${base}/duck1.png`}
+        {src: `${base}/duck1.jpg`}, 
+        {src: `${base}/duck2.jpg`},
+        {src: `${base}/duck3.jpg`},
+        {src: `${base}/duck4.jpg`}
     ]
 
     let quackSound;
