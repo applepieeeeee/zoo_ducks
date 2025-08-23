@@ -127,7 +127,7 @@
             quackSound.play();
         }
     }
-    
+
 </script>
 
 <svelte:head>

@@ -152,6 +152,10 @@
         {/if}
 
     </div>
+
+    <div class = "link-section">
+        <a href = "/duck-images" class = "link-button"> View Duck Images </a>
+    </div>
 </main>
 
 <style>
@@ -187,9 +191,9 @@
     .fact-card {
         background-color: var(--card-bg);
 
-        border-radius: 12px;
+        border-radius: 20px;
         padding: 3rem;
-        
+
         max-width: 500px;
         width: 100%;
 
@@ -212,7 +216,7 @@
         max-width: 300px;
         height: auto;
 
-        border-radius: 8px;
+        border-radius: 20px;
         margin-bottom: 1rem;
     }
 
@@ -279,7 +283,7 @@
         margin-bottom: -1rem;
         text-align: center;
         padding: 2rem;
-        border-radius: 8px;
+        border-radius: 20px;
     }
     
     .secret-page-unlock button {
@@ -399,5 +403,32 @@
             opacity: 0;
             display: none;
         }
+    }
+
+    .link-section{
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .link-button{
+        background-color: #9c7362;
+        color: white;
+        text-decoration: none;
+        padding: 12px 24px;
+        
+        border-radius: 10px;
+        border: 1px solid #9c7362;
+
+        font-size: 1.1rem;
+        font-family: 'Google Sans Code', monospace;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        display: inline-block;
+
+        margin-top: 1rem;
+    }
+
+    .link-button:hover{
+        background-color: #815948;
+        transform: scale(1.04);
     }
 </style>
