@@ -11,7 +11,7 @@ const config = {
       fallback: '404.html'
     }),
     paths: {
-      base: '/zoo_ducks' 
+      base: process.argv.includes('dev') ? '' : '/zoo_ducks'
     }
   }
 };
