@@ -7,13 +7,16 @@
         {src: `${base}/duck1.jpg`}, 
         {src: `${base}/duck2.jpg`},
         {src: `${base}/duck3.jpg`},
-        {src: `${base}/duck4.jpg`}
+        {src: `${base}/duck4.jpg`},
+        {src: `${base}/duck5.jpg`},
+        {src: `${base}/duck6.jpg`},
+        {src: `${base}/duck7.jpg`}
     ]
 
     let quackSound;
 
     onMount(() =>{
-        quackSound = new Audio(`base/quack.mp3`);
+        quackSound = new Audio(`${base}/quack.mp3`);
         document.addEventListener('click', playQuack);
     });
 

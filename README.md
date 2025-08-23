@@ -8,5 +8,9 @@
 ##### https://pixabay.com/images/search/white%20duck/
 ##### https://www.dereknielsen.com/news/duck-photography-tips-for-amazing-waterfowl-photos/
 ##### https://mapleleaffarms.com/farm-raised-duck/duck-breeds?srsltid=AfmBOooWDyBYytxUt4KvkOw5mSoTrLflP5mtcurHE6USoCJSAMDa81CC
+##### https://abc11.com/post/worlds-largest-rubber-duck-lands-greensboro-wet-wild/15072240/
+##### https://unsplash.com/photos/green-gray-and-brown-mallard-duck-in-body-of-water-rN3dqzDrhdk by Ravi Singh on Unsplash
+##### Photo by <a href="https://unsplash.com/@vincentvanzalinge?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Vincent van Zalinge</a> on <a href="https://unsplash.com/photos/shallow-focus-photo-of-flying-goose-MM2bY4W7G2Y?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+      
 
 #### Made for The Zoo on Hack Club
