@@ -117,7 +117,7 @@
 
         <div class="fact-content">
             <div class="fact-image">
-                <img src={fact_image} alt="Image related to {fact_title}" />
+                <img src={base + fact_image} alt="Image related to {fact_title}" />
             </div>
 
             <h2 class="fact-title">{fact_title}</h2>
