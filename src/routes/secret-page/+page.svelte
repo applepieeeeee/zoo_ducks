@@ -4,12 +4,12 @@
     import { onDestroy, onMount } from "svelte";
 
     const DUCK_IMAGES = {
-        default: "${base}/default.png",
-        sleep: "${base}/sleep.png",
-        WHAT: "${base}/WHAT.png",
-        joy: "${base}/joy.png",
-        love: "${base}/love.png",
-        body: "${base}/body.png"
+        default: "/default.png",
+        sleep: "/sleep.png",
+        WHAT: "WHAT.png",
+        joy: "$joy.png",
+        love: "love.png",
+        body: "body.png"
     }
 
     /*
@@ -20,7 +20,7 @@
         joy is when you pet ducky
         love is when you pet it more than 5 times in a row
         body is just the body of the duck
-    */
+    */ 
     
     let currentFaceSrc = DUCK_IMAGES.default;
     let duckMessage = "play with ducky!";

@@ -104,12 +104,6 @@
         border-radius: 8px;
     }
 
-    .image-container p{
-        margin-top: 1rem;
-        color: var(--text-color);
-        font-size: 1rem;
-    }
-
     .back-button-container{
         margin-top: 3rem;
     }
