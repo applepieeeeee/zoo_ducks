@@ -10,7 +10,12 @@
         {src: `${base}/duck4.jpg`},
         {src: `${base}/duck5.jpg`},
         {src: `${base}/duck6.jpg`},
-        {src: `${base}/duck7.jpg`}
+        {src: `${base}/duck7.jpg`},
+        {src: `${base}/duck8.jpg`},
+        {src: `${base}/duck9.jpg`},
+        {src: `${base}/duck10.jpg`},
+        {src: `${base}/duck11.jpg`},
+        {src: `${base}/duck12.jpg`}
     ]
 
     let quackSound;
