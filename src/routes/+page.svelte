@@ -19,6 +19,7 @@
     let totalFacts = $state(0);
     let viewedFacts = $state([]);
 
+    
     let shareMsg = $state('');
 
     let allViewed = $derived(viewedFacts.length === totalFacts && totalFacts > 0);
