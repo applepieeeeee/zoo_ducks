@@ -73,7 +73,7 @@
     }
 
     async function shareFact(){
-        const textToCopy = `Duck Fact: ${fact_title}\n${fact_desc}`;
+        const textToCopy = `🦆 Duck Fact: ${fact_title}\n${fact_desc} 🦆`;
         try{
             const textarea = document.createElement('textarea');
             textarea.value = textToCopy;
