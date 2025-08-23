@@ -10,6 +10,16 @@
         love: "/love.png",
         body: "/body.png"
     }
+
+    /*
+    Note:
+        default is the default face for ducky
+        sleep is if you don't interact with it for 5 seconds
+        WHAT is a random event that happens every minute
+        joy is when you pet ducky
+        love is when you pet it more than 5 times in a row
+        body is just the body of the duck
+    */
     
     let currentFaceSrc = DUCK_IMAGES.default;
     let duckMessage = "play with ducky!";
@@ -82,7 +92,7 @@
 
         petCount++;
 
-        if (petCount >= 10){
+        if (petCount >= 5){
             updateFace(DUCK_IMAGES.love);
             updateMessage("ducky loves u sm");
             petCount = 0;
@@ -94,6 +104,7 @@
                 updateMessage("play with ducky!");
             }, 1800);
         }
+
     }
 
     function goBack(){
@@ -116,8 +127,12 @@
             quackSound.play();
         }
     }
-
+    
 </script>
+
+<svelte:head>
+    <title> Ducky's Secret Page !! </title>
+</svelte:head>
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Ballet&display=swap');
@@ -203,10 +218,10 @@
     .duck-image{
         position: absolute;
 
-        top:0;
-        left:0;
-        width:100%;
-        height:100%;
+        top: 30px;
+        left: 0;
+        width: 100%;
+        height: 100%;
 
         object-fit:contain;
         border-radius: 8000px;
@@ -214,7 +229,7 @@
     }
 
     .duck-face{
-        top:0%;
+        top: 30px;
         left: 0%;
         width: 100%;
         height: 100%;
@@ -225,6 +240,8 @@
         position: absolute;
         top: -2.5rem;
         background-color: #8ea8af;
+
+        font-family: 'Google Sans Code', monospace;
 
         color: #fff;  
         font-size: 0.9rem;
@@ -238,6 +255,8 @@
         transform: translateX(-50%);
         left: 50%;
 
+        margin-top: 2rem;
+        margin-bottom: 2px;
     }
 
     .go-back-button {
@@ -258,6 +277,7 @@
     
     .go-back-button:hover{
         background-color: #475c65;
+        transform: scale(1.05);
     }
 
     .go-back-button:active{
