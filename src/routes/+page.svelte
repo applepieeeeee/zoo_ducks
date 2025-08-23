@@ -8,7 +8,6 @@
 
     let facts = $state([
         {
-            "title": "Loading...",
             "description": "",
             "image_url": "",
             "id": 0 
@@ -82,6 +81,7 @@
             textarea
 
             document.body.appendChild(textarea);
+
             textarea.focus();
             textarea.select();
 
@@ -109,6 +109,7 @@
         <span class = "title-letter">c</span>
         <span class = "title-letter">k</span>
         <span class = "title-letter">s</span>
+        <span class = "title-letter">!</span>
     </h1>
 
     <h2 class = "subtitle"> Explore this page to learn more about ducks! </h2>
@@ -256,7 +257,7 @@
         color: white;
 
         border: none;
-        border-radius: 50%;
+        border-radius: 45%;
 
         width: 44px;
         height: 44px;
@@ -298,9 +299,8 @@
         font-size: 1.1rem;
         font-family: 'Google Sans Code', monospace;
 
-        cursor: pointer;
-        transition: background-color 0.3s ease, transform 0.2s ease;
-    }  
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
 
     .secret-page-unlock button:hover{
         background-color: #b84915;
@@ -328,7 +328,7 @@
 
     .title-letter:hover{
         color: #be6326;
-        transform: translateY(-2px);
+        transform: translateY(-3px);
     }
 
     .subtitle{

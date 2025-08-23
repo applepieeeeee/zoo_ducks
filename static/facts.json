@@ -16,5 +16,17 @@
         "description": "All ducks belong to the biological order Anseriformes, a group that contains the ducks, geese and swans, as well as the screamers, and the magpie goose.",
         "image_url": "/taxonomy.png",
         "id": 3
+    },
+    {
+        "title": "Etymology",
+        "description": "The word duck comes from Old English dūce 'diver', a derivative of the verb *dūcan 'to duck, bend down low as if to get under something, or dive', because of the way many species in the dabbling duck group feed by upending; compare with Dutch duiken and German tauchen 'to dive'.",
+        "image_url": "/etymology.jpg",
+        "id": 4
+    },
+    {
+        "title": "Duck Distribution",
+        "description": "Ducks have a cosmopolitan distribution, and are found on every continent except Antarctica. Several species manage to live on subantarctic islands, including South Georgia and the Auckland Islands. Ducks have reached a number of isolated oceanic islands, including the Hawaiian Islands, Micronesia and the Galápagos Islands, where they are often vagrants and less often residents. A handful are endemic to such far-flung islands.",
+        "image_url": "/distribution.jpg",
+        "id": 5
     }
 ]
