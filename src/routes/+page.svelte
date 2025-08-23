@@ -135,7 +135,6 @@
             <button onclick={nextFact} class="nav-button" aria-label="Next fact">
                 ▶
             </button>
-            
         </div>
 
         {#if shareMsg}
@@ -152,7 +151,7 @@
                 <button onclick={() => window.location.href = '/secret-page'}>Open secret page</button>
             </div>
         {/if}
-
+        <p> *All facts are taken from Wikipedia* </p>
     </div>
 
     <div class = "link-section">
