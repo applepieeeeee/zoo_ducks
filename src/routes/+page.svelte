@@ -200,6 +200,7 @@
 
         text-align: center;
         transition: transform 0.3s ease;
+        justify-content: center;
     }
 
     .fact-card:hover {
